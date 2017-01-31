@@ -1,0 +1,5 @@
+machine;table;chain;protocol;ipsource;ipdest;portsrc;portdest;rule
+"example fitler 1";filter;INPUT;tcp;10.0.0.1;10.0.0.2;80;52002;ACCEPT
+"example filter 2";filter;INPUT;udp;10.0.0.1;10.0.0.2;80;52003;ACCEPT
+"example filter 3";filter;INPUT;tcp;10.0.0.1;10.0.0.2;80;52004;ACCEPT
+"example nat";nat;INPUT;tcp;10.0.0.1;10.0.0.2;80;52080;ACCEPT
