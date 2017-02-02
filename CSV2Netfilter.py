@@ -2,11 +2,6 @@
 
 '''This script will convert CSV files (with known format) to a netfilter/iptables-restore file.'''
 
-# TODO Ajouter Req. pour chaque commentaire.
-# TODO Generer des regles pour ebtables
-# TODO Ajouter la gestion des rate limiter
-# TODO Change date format to comply with iptables-save
-
 import sys
 import csv
 import hashlib
@@ -18,12 +13,13 @@ from tzlocal import get_localzone
 
 # Local software information
 __version__ = "0.1"
+__author__ = "Sylvain Leroy"
 myOutput = sys.stdout
 inputFileName = "rules.csv"
 defaultPolicy = "ACCEPT"
-timeFormat = "%H:%M:%S %Z"
 
 # Local system variables
+timeFormat = "%H:%M:%S %Z"
 myTimezone = get_localzone()
 
 
