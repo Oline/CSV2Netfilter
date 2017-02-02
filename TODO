@@ -1,0 +1,5 @@
+# TODO Ajouter la Req. correspondante pour chaque commentaire.
+# TODO Generer des regles pour ebtables.
+# TODO Ajouter la gestion des rate limiter (TC).
+# TODO Change date format to comply with iptables-save.
+# TODO Ajout d'un backend pour générer des règles au format de shorewall
