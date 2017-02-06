@@ -4,11 +4,12 @@
 
 import sys
 import csv
-import hashlib
 # Used to handle timing information on created files
 from datetime import datetime
+# hash functions for files
+from hashfunc import sha1sum
+from hashfunc import sha256sum
 # Used to handle timezone
-from functools import partial
 from tzlocal import get_localzone
 
 # Local software information
@@ -22,26 +23,6 @@ defaultPolicy = "ACCEPT"
 timeFormat = "%H:%M:%S %Z"
 myTimezone = get_localzone()
 
-
-###########################################################################
-def sha1sum(filename):
-    '''Calculate the sha1 value of a file's content.'''
-    with open(filename, mode='rb') as file_desc:
-        hsha1 = hashlib.sha1()
-        for buf in iter(partial(file_desc.read, 128), b''):
-            hsha1.update(buf)
-    file_desc.close()
-    return hsha1.hexdigest()
-
-###########################################################################
-def sha256sum(filename):
-    '''Calculate the sha256 value of a file's content.'''
-    with open(filename, mode='rb') as file_desc:
-        hsha256 = hashlib.sha256()
-        for buf in iter(partial(file_desc.read, 128), b''):
-            hsha256.update(buf)
-    file_desc.close()
-    return hsha256.hexdigest()
 
 ###########################################################################
 def write_headers(filename):
